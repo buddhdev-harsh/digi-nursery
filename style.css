@@ -1,0 +1,157 @@
+*{
+background-size: contain;
+	font-family: Century-Gothic;
+
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 3;
+  background-color: #000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.main{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	top: -20px;
+	left: 0px;
+	z-index:1;
+}
+body{
+  margin: 0;
+}
+header{
+	background-image: url(welcomphoto.jpg); 
+	height:95vh;
+	width: 100%;
+	background-size:cover; 
+	background-position: center;
+	margin: 0px;
+	position: relative;
+}
+.imgc{
+  margin-right: 3px;
+  margin-top: 6px;
+  padding: 2px;
+
+}
+ul li img:hover{
+  background-color: #000;
+
+}
+
+.welcome{
+	background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  border: 10px solid #f1f1f1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+      right: 0px;
+    width: 30%;
+    left: 50%;
+}
+ul{
+	list-style-type: none;
+    float: left;
+    color: white;
+    background-color: black;
+    width: 98%;
+}
+ul li{
+	display: inline-block;
+	padding: 20px;
+
+}
+ul li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 5px 20px;
+	transition: 0.6s ease;
+}
+ul li a:hover{
+	background-color: #fff;
+	color: #000;
+}
+.back2{
+	background-image: url(planting.jpg);
+	height:100vh;
+	position: relative;
+	background-size:cover ;
+	background-position: center;
+	margin: 0px;
+
+}
+.about{
+	background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  border: 10px solid #f1f1f1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+.des{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+
+
+}
+

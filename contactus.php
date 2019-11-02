@@ -1,0 +1,94 @@
+<?php include('contacus.php'); ?>
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Contact Us</title>
+	<style>
+		body{
+			margin:0;
+		}
+		.bgimg{
+	background-image: url(welcomphoto.jpg);
+	background-size: cover;
+	height: 100vh;
+	background-repeat: no-repeat;
+	 filter: blur(8px);
+  -webkit-filter: blur(10px);
+}
+		form{
+	background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 25px;
+}
+h2{color: #ffffff;font-family: "Times New Roman";}
+input[type=text]{
+	margin:7px;
+		color: #000;
+		background-color:#FFCCFF;
+		font-family: "Times New Roman";
+		padding: 10px;
+}input[type=email]{
+	margin:7px;
+		color: #000;
+		background-color:#FFCCFF;
+		font-family: "Times New Roman";
+		padding: 10px;}
+textarea{
+	margin:7px;
+		color: #000;
+		background-color:#FFCCFF;
+		font-family: "Times New Roman";
+		padding: 10px;
+}		
+input[type=submit]{
+	background-color: #ffffff;
+  		border: none;
+  		color: #000;
+ 		 padding: 10px 16px;
+ 		 text-decoration: none;
+ 		 margin: 4px 2px;
+  		margin-left: 20px;
+ 		 margin-top: 20px;
+  		cursor: pointer;
+  		font-family: "Times New Roman"
+}
+input[type=submit]:hover{
+		
+		background-color: #000;
+  		color: #ffffff;
+ 		}
+ 	a{
+ 		margin-left: 17px;
+	text-decoration: underline;
+	color: #ffffff;	
+}
+a:hover{
+	color: #000;
+}
+</style>
+
+</head>
+<body>
+	<div class="bgimg"></div>
+	<form method="post" action="homepage.php">
+		<h2>Contact Us</h2>
+		Name:<br><input type="text" name="name" placeholder="Name" required><br>
+		Email:<br><input type="Email" placeholder="Email" required name="email"><br>
+		Message:<br><textarea rows="2" cols="30" placeholder="Message" required name="message"></textarea><br>
+		<input type="submit" name="submit" value="submit"><br><p><a href="homepage.php">Home</a></p>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="shop.css">
+</head>
+<body>
+		<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <a href="Shop.php">Shop</a>
+		  <a href="cart.php">Cart</a>
+		  <a href="order.php">Order</a>
+		  <a href="home.php">Log Out</a>
+      <a href="uploaders.php">Sell Item</a>
+		  <a href="contactus.php">Contact Us</a>
+		</div>
+		  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		
+
+	<div class="container">
+   <br />
+   <h2 align="center"></h2><br />
+   <div class="form-group">
+    <div class="input-group">
+     <span class="input-group-addon">Search</span>
+     <input type="text" name="search_text" id="search_text" placeholder="Search by Customer Details" class="form-control" />
+    </div>
+   </div>
+   <br />
+   <h1>Shop Items</h1>
+   <div id="result"></div>
+  </div>
+
+
+  <br>
+	<div style="text-align:center" class="dots">
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	  <span class="dot"></span> 
+	</div>
+	
+	<br>
+	<br>
+	<br>
+		
+	<br>
+
+		
+
+
+	
+	
+	
+	
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+var slideIndex = 0;
+showSlides();
+
+
+
+
+
+
+</script>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#result').html(data);
+   }
+  });
+ }
+ $('#search_text').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});	
+
+
+</script>

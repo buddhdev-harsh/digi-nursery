@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My cart</title>
+    <link rel="stylesheet" type="text/css" href="cart.css">
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="Shop.php">Shop</a>
+  <a href="cart.php">Cart</a>
+  <a href="order.php">Order</a>
+  <a href="home.php">Log Out</a>
+  <a href="uploaders.php">Sell Item</a>
+  <a href="contactus.php">Contact Us</a>
+</div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <div class="intro">
+    <h1>Cart Items</h1>
+  </div>
+
+<?php 
+
+    $connect = mysqli_connect('localhost','root','','test2');
+    if(mysqli_connect_error()){
+      echo "error:".mysqli_connect_error();
+    } 
+    if(isset($_POST["add_to_cart"])){
+ 
+if (isset($_COOKIE["shopping_cart"])) {
+  # code...
+  $cookie_data = stripcslashes($_COOKIE['shopping_cart']);
+  $cart_data =json_decode($cookie_data,true);
+
+}
+else{
+  $cart_data = array();
+
+}
+
+$item_id_list = array_column($cart_data,'item_id');
+    
+      $item_array = array(
+        'item_id'=>$_POST["hidden_id"],
+        'item_name'=>$_POST["iname"],
+        'item_price'=>$_POST["iprice"]
+
+      );
+      $cart_data[] = $item_array;
+      $item_data = json_encode($cart_data);
+      setcookie('shopping_cart',$item_data,time()+(86400*30));
+      header("location:cart.php?success=1");
+    }
+    if(isset($_GET["success"])){
+      $message = '
+      <div class="alert">
+        <a href="#" class="close" aria-lable="close">$times;</a>
+
+        Item Added into cart
+        <div>
+      ';
+    }
+
+    ?>
+    <div align="right">
+      <a href="cart.php?action=clear"><b>Clear Cart</b></a>
+    </div>
+    <table>
+      <tr>
+        <th width="40%" align="left">Item Name</th>
+        <th width="20%" align="left">Price</th>
+        <th width="15%" align="left">Total</th>
+        <th width="5%" align="left">Action</th>
+      </tr>
+      <?php
+      if(isset($_COOKIE["shopping_cart"])){
+        $total = 0;
+        $cookie_data = stripslashes($_COOKIE['shopping_cart']);
+        $cart_data = json_decode($cookie_data,true);
+        foreach ($cart_data as $key => $value) {
+          # code...
+          ?>
+          <tr>
+            <td><?php echo $value["item_name"];?></td>
+             <td><?php echo $value["item_price"];?></td>
+             <td>$ <?php echo number_format($value["item_price"]*1,2);?></td>
+             <td><a href="cart.php?action=delete&id=<?php echo $value["item_id"];?>"><span class="text-danger">Remove</span></td>
+          </tr>
+          <?php
+            $total = $total +$value["item_price"];
+           } 
+
+
+            if (isset($_GET["action"])) {
+              if($_GET["action"] == "delete"){
+                $cookie_data = stripcslashes($_COOKIE['shopping_cart']);
+                $cart_data = json_decode($cookie_data,true);
+                foreach ($cart_data as $key => $value) {
+                  # code...
+                  if($cart_data[$key]['item_id'] == $_GET["id"]){
+                    unset($cart_data[$key]);
+                    $item_data = json_encode($cart_data);
+                    setcookie('shopping_cart',$item_data,time()+(86400 *30));
+                    header("location:cart.php?remove=1");
+              }
+            }
+          }
+           if ($_GET["action"] == "clear") {
+          # code...
+          setcookie("shopping_cart","",time()-3600);
+          header("location:shop.php?clearall=1");
+        }
+        }
+        if (isset($_GET["remove"])) {
+          # code...
+          $message = 'Item removed from cart';
+        }
+       
+        if (isset($_GET["clearall"])) {
+          # code...
+          $message = 'shopping cart has been clear';
+        }
+        
+        
+        ?>
+        <tr>
+          <td colspan="3" align="right">--Total</td>
+          <td align="right">$ <?php echo number_format($total,2);?>
+            
+          </td>
+        </tr>
+        <?php
+      }
+      else{
+        echo '
+        <tr>
+        <td colspan="5 align="center">No items in cart</td>
+        </tr>
+        ';
+      }
+
+?>      
+    </table>
+
+  
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+
+
+function removeElement(parentDiv, childDiv){
+     if (childDiv == parentDiv) {
+          alert("The parent div cannot be removed.");
+     }
+     else if (document.getElementById(childDiv)) {     
+          var child = document.getElementById(childDiv);
+          var parent = document.getElementById(parentDiv);
+          parent.removeChild(child);
+     }
+     else {
+          alert("Child div has already been removed or does not exist.");
+          return false;
+     }
+}
+</script>
+</body>
+</html>

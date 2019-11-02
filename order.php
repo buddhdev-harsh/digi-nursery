@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Orderd Items</title>
+	<link rel="stylesheet" type="text/css" href="order.css">
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="Shop.php">Shop</a>
+  <a href="cart.php">Cart</a>
+  <a href="order.php">Order</a>
+  <a href="home.php">Log Out</a>
+  <a href="uploaders.php">Sell Item</a>
+  <a href="contactus.php">Contact Us</a>
+</div>
+
+<div id="main">
+  
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+<br>
+<h1>Ordered Items</h1>
+
+<div class="List">
+		<div class="Image">
+			<img src="rose.jpg">
+		</div>
+		<div class="name">
+			<h3>Rose</h3>
+		</div>
+		<div class="des">
+			<p>write smothing...</p>
+		</div>
+		<div class="price">
+			<h3>$23</h3>
+		</div>
+		<div class="time">
+			<time class="orderdate">2-july-19</time>
+			<time class="diliverydate">5-july-19</time>
+		</div>
+	</div>
+
+
+	<div class="List">
+		<div class="Image">
+			<img src="rose.jpg">
+		</div>
+		<div class="name">
+			<h3>Rose</h3>
+		</div>
+		<div class="des">
+			<p>write smothing...</p>
+		</div>
+		<div class="price">
+			<h3>$23</h3>
+		</div>
+		<div class="time">
+			<time class="orderdate">2-july-19</time>
+			<time class="diliverydate">5-july-19</time>
+		</div>
+	</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+</body>
+</html>

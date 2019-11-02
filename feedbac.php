@@ -1,0 +1,15 @@
+<?php
+
+$con = mysqli_connect("localhost", "root", "","test2");
+
+	if(isset($_POST['submitb']))
+{
+	$expr=$_POST['expr'];
+	$email=$_POST['email'];
+	$feedback=$_POST['fed'];
+	
+	$query = "INSERT INTO fedback(expr, email, feedback) VALUES('$expr','$email','$feedback')";
+	mysqli_query($con,$query);
+}
+header('homepage.php');
+ ?>

@@ -1,0 +1,223 @@
+*{
+	box-sizing: border-box;
+
+}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0px;
+	margin: 0px;
+}
+.topnav{
+	margin-top: -70px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 4;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.topnav{
+	top: 30%;
+	margin-top: 10px;
+
+}
+.topnav input[type=text]{
+	padding: 8px;
+	width: 56%;
+	margin-left: 20%;
+	position: sticky;
+	background-color: #ffffff;
+	font-family: "Times New Roman";
+	font-size: 18px;
+	border: none;
+	box-shadow: 5px 5px 5px 5px #888888;
+}
+.topnav .searchbar button{
+	padding: 16px;
+	position: relative;
+	z-index: 1;
+	right: 2.7%;
+	background-color: transparent;
+	border: none;
+	margin-bottom: 0px;
+}
+.slideshow-container {
+  max-width: 350px;
+  background-size: cover;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 550px;
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s white;
+}
+
+.active {
+  background-color: #717171;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.allcards{
+	height: 50px;
+	width: auto;
+}
+.r1{
+		float: left;
+		margin:30px;
+		display: inline-block;
+		width: 8%;
+		height: 8%;
+		border-radius: 10%;
+		border-top-left-radius: 33px;
+		border-bottom-left-radius: 33px;
+		box-shadow:5px 5px 5px 5px #888888; 
+}
+.roundedcards img{
+		border-radius: 50%;
+		height: 50px;
+		width: 50px;
+		margin-top: 3px;
+}
+.roundedcards a{
+		font-family: "Times New Roman";
+		position: absolute;
+		margin-top: 10px;
+		padding: 5px;
+		font-size: 20px;		
+}
+.squarecards{
+	 margin: 4%;
+
+}
+.card{
+	float: left;
+    
+     display: inline-block;
+     box-shadow: 2px 2px 20px black;
+     border-radius: 5px; 
+     margin: 5%;
+     margin-top: -10px;
+     margin-left: -10px;
+    }
+
+
+
+.title{
+ 
+  text-align: center;
+ 
+  
+ }
+.image{
+  height: 15%;
+  width: 100%;
+}
+h1{
+
+  font-size: 30px;
+ }
+
+.des{
+  padding: 3px;
+  text-align: left;
+  padding-top: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.price{
+  text-align: center;
+  font-size: 10px;
+}
+
+.des button{
+
+  padding-left:0px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+.des button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+.des input[type=submit]{
+  padding-left:0px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+.des input[type=submit]:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+.resultSearch{
+  width:70%;
+  z-index: 4;
+  position: fixed;
+  
+
+}

@@ -1,0 +1,113 @@
+body{
+	height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.bgimg{
+	background-image: url(form.jpg);
+	 filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100vh; 
+  width: 212vh;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+*{
+box-sizing: border-box;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #000;
+    text-decoration: none;
+  }
+
+.header{
+ background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 25px;
+
+}
+.form{
+	font-family: "Times New Roman";
+}
+.radios{
+	padding-bottom: 20px;
+display: block;
+  cursor: pointer;
+font-size: 20px;
+  position: relative;
+}
+.radios input{
+	cursor: pointer;
+}
+.fb{
+	margin-bottom: 10px;
+	
+}
+.em{
+	margin-bottom: 10px;
+
+}
+.nm{
+	margin-bottom: 10px;
+
+}
+input[type=email]{
+margin: 7px;
+  color: #000;
+    background-color:#FFCCFF;
+    font-family: "Times New Roman";
+    padding: 10px;
+    margin-left: 3px;
+}
+
+
+textarea{
+  margin: 7px;
+  color: #000;
+    background-color:#FFCCFF;
+    font-family: "Times New Roman";
+    padding: 10px;
+    margin-left: 3px;
+}
+
+input[type=submit]:hover{
+    background-color: #000;
+      color: #ffffff;
+      font-style: solid;
+      padding: 15px;
+
+      margin:15px;
+      font-family: "Times New Roman" 
+      border:none;
+  }
+  input[type=submit]{
+    background-color: #ffffff;
+      color: #000;
+            border:none;
+font-family: "Times New Roman"
+      font-style: bold;
+      padding: 15px;
+      margin:15px; 
+  }

@@ -1,0 +1,54 @@
+<?php
+//fetch.php
+$connect = mysqli_connect("localhost", "root", "", "test2");
+
+	
+if(isset($_POST["query"]))
+{
+ $search = mysqli_real_escape_string($connect, $_POST["query"]);
+ $query = "
+  SELECT * FROM students 
+  WHERE username LIKE '%".$search."%'
+ 
+ ";
+}
+else
+{
+ $query = "
+  SELECT * FROM students ORDER BY id
+ ";
+}
+$result = mysqli_query($connect, $query);
+if(mysqli_num_rows($result) > 0)
+{
+ while($row = mysqli_fetch_array($result)){
+					?>
+					
+					
+							<form method="POST">
+							 <div class="float" style="float: left;margin-right: 30px;">
+							 <h1 style="font-size: 20px;text-align: left; margin-bottom: -10px; padding: 10px;"><?php echo $row['username']; ?></h1>
+							
+							<div class="price" style="width: 30%; height: 7%; margin-bottom: -5px; padding: 10px;text-align: left;">
+								<label  style="font-size: 20px;">$<?php echo $row['email']; ?></label>
+							</div>
+							<input type="hidden" name="hidden_id" value="<?php echo $row['id']; ?>" />
+							
+							<a href="delete.php?dele=<?php echo $row['id'];?>">Remove</a>
+							</div>
+							</form>
+					
+						
+					<?php
+				}
+}
+else
+{
+ echo 'Data Not Found';
+}
+
+
+
+
+
+?>

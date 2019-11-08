@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="imgbg"></div>
+	
+	<div class="form">
+		<div class="prof">
+		<img src="profimg.png" align="avatar" style="width: 150px" class="main">
+		<img src="closeeye.png" align="avatar" style="visibility:hidden" id="overr" class="over">
+		<img src="closeeye.png" align="avatar" style="visibility:hidden" id="overrr" class="over2">
+		</div>
+		<h2>Login</h2>
+		<form method="post" action="login.php">
+			<?php include('error.php'); ?>
+			Name:<br><input type="email" name="email" placeholder="Email" required><br>
+		
+			Password:<br><input type="checkbox" onclick="myFunction()"><input type="Password" id="myInput" name="password" onkeyup="maru()" placeholder="Password" required>
+			<br>
+		
+		<input type="submit" name="login_admin" value="Login">
+		
+		</form>
+		<h4>not a member?<a href="register.php">register</a></h4>
+		<h4><a href="homepage.php">Home</a></h4>
+		<h4><a href="forgotpass.php">forgot password</h4>
+		<h4><a href="resetpass.php">Reset Password</a></h4>
+	</div>
+	<script>
+		function maru(){
+			document.getElementById("overrr").style.visibility="visible";
+		
+			document.getElementById("overr").style.visibility="visible";
+		}
+		function myFunction() {
+  			var x = document.getElementById("myInput");
+  			if (x.type === "password") {
+  			  x.type = "text";
+					document.getElementById("overrr").style.visibility="hidden";
+		
+					document.getElementById("overr").style.visibility="hidden";
+  			} else {
+
+    		x.type = "password";
+  		}
+  		
+
+	}
+	</script>
+</body>
+</html>

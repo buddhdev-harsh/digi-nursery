@@ -5,14 +5,14 @@
 	$id = $_GET['del'];
 	$queryy = "DELETE FROM shop WHERE id='$id'";
 	mysqli_query($conn,$queryy);
-	header('location:removeproduct.php');
+	header('location:removeproduct.html');
 }
 	if (isset($_GET['dele'])) {
 		# code...
 		$id = $_GET['dele'];
 		$queryy = "DELETE FROM students WHERE id='$id'";
 		mysqli_query($conn,$queryy);
-		header('location:removeuser.php');
+		header('location:removeuser.html');
 
 
 	}

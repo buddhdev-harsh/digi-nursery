@@ -50,8 +50,8 @@
 
 	<div id="mySidenav" class="sidenav">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		  <a href="removeproduct.php">Remove product</a>
-		  <a href="admin.php">Admin page</a>
+		  <a href="removeproduct.html">Remove product</a>
+		  <a href="admin.html">Admin page</a>
 		  
 		</div>
 		  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -98,7 +98,7 @@ $(document).ready(function(){
  function load_data(query)
  {
   $.ajax({
-   url:"fetchuser.php",
+   url:"fetchuser.html",
    method:"POST",
    data:{query:query},
    success:function(data)

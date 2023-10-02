@@ -1,4 +1,4 @@
-<?php include('adminslogdata.php');?>
+<?php include('adminslogdata.html');?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
 		</div>
 		<h2>Login</h2>
 		<form method="post" >
-			<?php include('error.php'); ?>
+			<?php include('error.html'); ?>
 			Name:<br><input type="email" name="email" placeholder="Email" required><br>
 		
 			Password:<br><input type="checkbox" onclick="myFunction()"><input type="Password" id="myInput" name="password" onkeyup="maru()" placeholder="Password" required>
@@ -25,9 +25,9 @@
 		<input type="submit" name="login_admin" value="Login">
 		
 		</form>
-		<h4><a href="homepage.php">Home</a></h4>
-		<h4><a href="forgotpass.php">forgot password</h4>
-		<h4><a href="resetpass.php">Reset Password</a></h4>
+		<h4><a href="homepage.html">Home</a></h4>
+		<h4><a href="forgotpass.html">forgot password</h4>
+		<h4><a href="resetpass.html">Reset Password</a></h4>
 	</div>
 	<script>
 		function maru(){

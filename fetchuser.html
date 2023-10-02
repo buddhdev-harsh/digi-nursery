@@ -1,5 +1,5 @@
 <?php
-//fetch.php
+//fetch.html
 $connect = mysqli_connect("localhost", "root", "", "test2");
 
 	
@@ -34,7 +34,7 @@ if(mysqli_num_rows($result) > 0)
 							</div>
 							<input type="hidden" name="hidden_id" value="<?php echo $row['id']; ?>" />
 							
-							<a href="delete.php?dele=<?php echo $row['id'];?>">Remove</a>
+							<a href="delete.html?dele=<?php echo $row['id'];?>">Remove</a>
 							</div>
 							</form>
 					

@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.html';
+require 'PHPMailer/src/PHPMailer.html';
+require 'PHPMailer/src/SMTP.html';
 $connection = new mysqli("localhost","root","","test2");
 if(mysqli_connect_errno()){
 	echo "Failed to connect: ". mysqli_connect_errno();
@@ -32,7 +32,7 @@ if(isset($_POST["email"])){
 			    $mail->SMTPSecure = 'ssl';        
 			    $mail->Port       = 465;                              
 
-			    $url="http://".$_SERVER["HTTP_HOST"].dirname($_SERVER["PHP_SELF"])."/resetPassword.php?code=$code";
+			    $url="http://".$_SERVER["HTTP_HOST"].dirname($_SERVER["PHP_SELF"])."/resetPassword.html?code=$code";
 			    $mail->setFrom( 'harahismast@gmail.com','hello from' );
 			    $mail->addAddress($emailto, $emailto);     
 			    $mail->isHTML(true);                   
@@ -146,7 +146,7 @@ if(isset($_POST["email"])){
 		<br>
 		<br>
 		<br>
-		<a href="homepage.php">Home</a>
+		<a href="homepage.html">Home</a>
 	</form>
 </body>
 </html>
